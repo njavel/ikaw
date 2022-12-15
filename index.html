@@ -16,13 +16,14 @@
             color: #000aff;
             padding: 10px;
             text-decoration: none;
-            font-size: 80px;
+            font-size: 30px;
             border-radius: 5px;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             -webkit-text-stroke: #63ff00;
             -webkit-text-stroke-width: 4px;
-            position: absolute;
-          	left: 777px; top: 1150px; 
+            position: fixed;
+          	left: 300px; 
+          	top: 300px; 
         }
 
         nav#saro2{margin-top: 10px;}
@@ -72,13 +73,14 @@
             color: #000aff;
             padding: 10px;
             text-decoration: none;
-            font-size: 80px;
+            font-size: 30px;
             border-radius: 5px;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             -webkit-text-stroke: #63ff00;
-            -webkit-text-stroke-width: 4px;
-            position: absolute;
-          	right: 970px; top: 1680px; 
+            -webkit-text-stroke-width: 1px;
+            position: relative;
+          	right: 1180px;
+          	top: 300px; 
         }
 
         nav#saro6{margin-top: 10px;}
@@ -86,18 +88,20 @@
             color: #000aff;
             padding: 10px;
             text-decoration: none;
-            font-size: 80px;
+            font-size: 30px;
             border-radius: 5px;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             -webkit-text-stroke: #63ff00;
-            -webkit-text-stroke-width: 4px;
-            position: absolute;
-          	right: 720px; top: 1030px; 
+            -webkit-text-stroke-width: 1px;
+            position: relative;
+          	left: 1180px;
+          	top: 260px; 
         }
 
       .resize{
-        width: 222px;
+        width: 0px;
         height: auto;
+        position: absolute;
         
       }
 
@@ -134,34 +138,29 @@ kudyapanim.src = "track006.mp3";
 <body background="sea.png">
   <img class="resize" src="qr.png" alt="description of image">
 
-<nav id = "saro1">
+   
+</body>
+<nav id="saro1">
     <a href="#" onmousedown="kudyapisa.play()">isa</a>
 </nav>
 
-<nav id = "saro2">
+<nav id="saro2">
     <a href="#" onmousedown="kudyapdalawa.play()">dalawa</a>
 </nav>
 
-<nav id = "saro3">
+<nav id="saro3">
     <a href="#" onmousedown="kudyaptatlo.play()">tatlo</a>
 </nav>
 
-<nav id = "saro4">
+<nav id="saro4">
     <a href="#" onmousedown="kudyapapat.play()">apat</a>
 </nav>
 
-<nav id = "saro5">
+<nav id="saro5">
     <a href="#" onmousedown="kudyaplima.play()">lima</a>
 </nav>
 
-<nav id = "saro6">
+<nav id="saro6">
     <a href="#" onmousedown="kudyapanim.play()">anim</a>
 </nav>
-
-
-  
-
-    
-</body>
-
 </html>

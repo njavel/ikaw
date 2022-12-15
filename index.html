@@ -102,6 +102,7 @@
         height: auto;
         position: absolute;
         
+        
       }
 
 
@@ -130,6 +131,46 @@ kudyaplima.src = "track005.mp3";
 
 const kudyapanim =  new Audio();
 kudyapanim.src = "track006.mp3";
+        
+        function createEmoji (x, y) {
+    const emojis = ['ᜁ','ᜃ','ᜏ᜔','ᜀ','ᜅ᜔','ᜁ','ᜎ','ᜏ᜔']
+    const ran = Math.floor(Math.random() * emojis.length)
+    const emoji = emojis[ran]
+    // create span element for emoji
+    const ele = document.createElement('span')
+    ele.textContent = emoji
+    ele.className = 'emoji-trail'
+    // size && position emoji
+    ele.style.position = 'absolute'
+    ele.style.left = x + 'px'
+    ele.style.top = y + 'px'
+    ele.style.fontSize = '48px'
+    // set emoji data
+    ele.dataset.velocity = {
+      x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+      y: 1
+    }
+    return ele
+  }
+          function updateEmoji (emoji) {
+    let x = parseInt(emoji.style.left)
+    let y = parseInt(emoji.style.top)
+    let f = parseInt(emoji.style.fontSize)
+    x += parseInt(emoji.dataset.velocity.x)
+    y += parseInt(emoji.dataset.velocity.y)
+    f -= 0.25
+    emoji.style.left = x + 'px'
+    emoji.style.top = y + 'px'
+    emoji.style.fontSize = f + 'px'
+    if (f < 0) emoji.remove()
+    else setTimeout(updateEmoji, 1000 / 30, emoji)
+  }
+          window.addEventListener('mousemove', (e) => {
+    // create a new emoji every time the mouse moves
+    const emoji = createEmoji(e.clientX - 24, e.clientY - 24)
+    document.body.appendChild(emoji)
+    updateEmoji(emoji)
+  })
 
 
     </script>
@@ -163,4 +204,5 @@ kudyapanim.src = "track006.mp3";
 <nav id="saro6">
     <a href="#" onmousedown="kudyapanim.play()">anim</a>
 </nav>
+  
 </html>
